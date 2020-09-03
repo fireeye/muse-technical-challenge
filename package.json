@@ -1,0 +1,39 @@
+{
+  "name": "muse-technical-challenge",
+  "version": "0.0.1",
+  "description": "Muse Technical Challenge Stencil Component Starter",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:fireeye/muse-technical-challenge.git"
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "es2015": "dist/esm/index.mjs",
+  "es2017": "dist/esm/index.mjs",
+  "types": "dist/types/index.d.ts",
+  "collection": "dist/collection/collection-manifest.json",
+  "collection:main": "dist/collection/index.js",
+  "unpkg": "dist/muse-technical-challenge/muse-technical-challenge.js",
+  "files": [
+    "dist/",
+    "loader/"
+  ],
+  "scripts": {
+    "build": "stencil build --docs",
+    "start": "stencil build --dev --watch --serve",
+    "test": "stencil test --spec --e2e",
+    "test.watch": "stencil test --spec --e2e --watchAll",
+    "generate": "stencil generate"
+  },
+  "dependencies": {
+    "@stencil/core": "^1.17.3"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "25.2.3",
+    "@types/puppeteer": "2.0.1",
+    "jest": "26.0.1",
+    "jest-cli": "26.0.1",
+    "puppeteer": "2.1.1"
+  }
+}
