@@ -6,7 +6,7 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface FireeyeToggleButton {
+    interface FireeyeToggleSwitch {
         /**
           * Background of toggle when in active state
          */
@@ -16,7 +16,7 @@ export namespace Components {
          */
         "backgroundInActive": string;
         /**
-          * height of toggle button
+          * height of toggle switch
          */
         "height": string;
         /**
@@ -24,11 +24,11 @@ export namespace Components {
          */
         "isRounded": boolean;
         /**
-          * The value of toggle  button
+          * The value of toggle  switch
          */
         "value": boolean;
         /**
-          * width of toggle button
+          * width of toggle switch
          */
         "width": string;
     }
@@ -48,11 +48,11 @@ export namespace Components {
     }
 }
 declare global {
-    interface HTMLFireeyeToggleButtonElement extends Components.FireeyeToggleButton, HTMLStencilElement {
+    interface HTMLFireeyeToggleSwitchElement extends Components.FireeyeToggleSwitch, HTMLStencilElement {
     }
-    var HTMLFireeyeToggleButtonElement: {
-        prototype: HTMLFireeyeToggleButtonElement;
-        new (): HTMLFireeyeToggleButtonElement;
+    var HTMLFireeyeToggleSwitchElement: {
+        prototype: HTMLFireeyeToggleSwitchElement;
+        new (): HTMLFireeyeToggleSwitchElement;
     };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
@@ -61,12 +61,12 @@ declare global {
         new (): HTMLMyComponentElement;
     };
     interface HTMLElementTagNameMap {
-        "fireeye-toggle-button": HTMLFireeyeToggleButtonElement;
+        "fireeye-toggle-switch": HTMLFireeyeToggleSwitchElement;
         "my-component": HTMLMyComponentElement;
     }
 }
 declare namespace LocalJSX {
-    interface FireeyeToggleButton {
+    interface FireeyeToggleSwitch {
         /**
           * Background of toggle when in active state
          */
@@ -76,7 +76,7 @@ declare namespace LocalJSX {
          */
         "backgroundInActive"?: string;
         /**
-          * height of toggle button
+          * height of toggle switch
          */
         "height"?: string;
         /**
@@ -88,11 +88,11 @@ declare namespace LocalJSX {
          */
         "onToggleClick"?: (event: CustomEvent<any>) => void;
         /**
-          * The value of toggle  button
+          * The value of toggle  switch
          */
         "value"?: boolean;
         /**
-          * width of toggle button
+          * width of toggle switch
          */
         "width"?: string;
     }
@@ -111,7 +111,7 @@ declare namespace LocalJSX {
         "middle"?: string;
     }
     interface IntrinsicElements {
-        "fireeye-toggle-button": FireeyeToggleButton;
+        "fireeye-toggle-switch": FireeyeToggleSwitch;
         "my-component": MyComponent;
     }
 }
@@ -119,7 +119,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "fireeye-toggle-button": LocalJSX.FireeyeToggleButton & JSXBase.HTMLAttributes<HTMLFireeyeToggleButtonElement>;
+            "fireeye-toggle-switch": LocalJSX.FireeyeToggleSwitch & JSXBase.HTMLAttributes<HTMLFireeyeToggleSwitchElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }
     }

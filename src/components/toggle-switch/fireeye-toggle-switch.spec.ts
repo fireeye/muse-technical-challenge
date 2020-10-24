@@ -1,28 +1,28 @@
 import { newSpecPage } from "@stencil/core/testing";
-import { ToggleButton } from "./fireeye-toggle-button";
+import { ToggleSwitch } from "./fireeye-toggle-switch";
 
-describe("ToggleButton", () => {
+describe("ToggleSwitch", () => {
   it("should render with shadow dom", async () => {
     const { root } = await newSpecPage({
-      components: [ToggleButton],
-      html: "<fireeye-toggle-button></fireeye-toggle-button>",
+      components: [ToggleSwitch],
+      html: "<fireeye-toggle-switch></fireeye-toggle-switch>",
     });
     expect(root).toEqualHtml(`
-          <fireeye-toggle-button>
+          <fireeye-toggle-switch>
             <mock:shadow-root>
              <label class="container" style="width:40px; height: 20px;">
               <input class="checkbox" type="checkbox">
               <span class="round switch" style="background: #d6d4d4;"></span>
             </label>
             </mock:shadow-root>
-          </fireeye-toggle-button>
+          </fireeye-toggle-switch>
         `);
   });
 
   it("should render without shadow dom", async () => {
     const page = await newSpecPage({
-      components: [ToggleButton],
-      html: "<fireeye-toggle-button></fireeye-toggle-button>",
+      components: [ToggleSwitch],
+      html: "<fireeye-toggle-switch></fireeye-toggle-switch>",
       supportsShadowDom: false,
     });
     expect(page.root.shadowRoot).toBeFalsy();
@@ -31,8 +31,8 @@ describe("ToggleButton", () => {
 
   it("Should emit on click", async () => {
     const page = await newSpecPage({
-      components: [ToggleButton],
-      html: "<fireeye-toggle-button></fireeye-toggle-button>",
+      components: [ToggleSwitch],
+      html: "<fireeye-toggle-switch></fireeye-toggle-switch>",
       supportsShadowDom: false,
     });
     let button = page.root.querySelector(".checkbox") as HTMLInputElement;
@@ -45,8 +45,8 @@ describe("ToggleButton", () => {
   it('should emit click event', async () => {
     let eventSpy = jest.fn();
     const page = await newSpecPage({
-      components: [ToggleButton],
-      html: "<fireeye-toggle-button></fireeye-toggle-button>",
+      components: [ToggleSwitch],
+      html: "<fireeye-toggle-switch></fireeye-toggle-switch>",
       supportsShadowDom: false,
     });
     page.root.addEventListener('toggleClick', eventSpy);

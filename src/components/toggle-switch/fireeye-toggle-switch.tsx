@@ -1,30 +1,30 @@
 import { Component, h, Prop, Event, EventEmitter } from '@stencil/core';
 
 /**
- * The toggle button component
+ * The toggle switch component
  *
  * @remarks
  * We can consume this in following way. All the property passed are optional.
- * <fireeye-toggle-button 
+ * <fireeye-toggle-switch 
  *  background-active="green" 
  *  background-in-active="red" 
  *  width="100px"
  *  height="50px"
  *  value="true" 
  *  is-rounded="true">
- * </fireeye-toggle-button>
+ * </fireeye-toggle-switch>
  * 
  * @public
  */
 @Component({
-    tag: 'fireeye-toggle-button',
-    styleUrl: 'fireeye-toggle-button.css',
+    tag: 'fireeye-toggle-switch',
+    styleUrl: 'fireeye-toggle-switch.css',
     shadow: true
 })
-export class ToggleButton {
+export class ToggleSwitch {
 
     /**
-        * The value of toggle  button
+        * The value of toggle  switch
     */
     @Prop({ mutable: true, reflect: true }) value: boolean = false;
 
@@ -39,12 +39,12 @@ export class ToggleButton {
     @Prop() backgroundInActive: string = "#d6d4d4";
 
     /**
-        * width of toggle button
+        * width of toggle switch
     */
     @Prop() width: string = "40px";
 
     /**
-        * height of toggle button
+        * height of toggle switch
     */
     @Prop() height: string = "20px";
 

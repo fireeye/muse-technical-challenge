@@ -11,10 +11,10 @@
 | -------------------- | ---------------------- | -------------------------------------------- | --------- | ----------- |
 | `backgroundActive`   | `background-active`    | Background of toggle when in active state    | `string`  | `"#918e8e"` |
 | `backgroundInActive` | `background-in-active` | Background of toggle when in in-active state | `string`  | `"#d6d4d4"` |
-| `height`             | `height`               | height of toggle button                      | `string`  | `"20px"`    |
+| `height`             | `height`               | height of toggle switch                      | `string`  | `"20px"`    |
 | `isRounded`          | `is-rounded`           | if yes toggle is rounded else square         | `boolean` | `true`      |
-| `value`              | `value`                | The value of toggle  button                  | `boolean` | `false`     |
-| `width`              | `width`                | width of toggle button                       | `string`  | `"40px"`    |
+| `value`              | `value`                | The value of toggle  switch                  | `boolean` | `false`     |
+| `width`              | `width`                | width of toggle switch                       | `string`  | `"40px"`    |
 
 
 ## Events
