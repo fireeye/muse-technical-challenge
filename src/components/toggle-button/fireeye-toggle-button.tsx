@@ -1,4 +1,5 @@
 import { Component, h, Prop, Event, EventEmitter } from '@stencil/core';
+
 /**
  * The toggle button component
  *
@@ -9,7 +10,7 @@ import { Component, h, Prop, Event, EventEmitter } from '@stencil/core';
  *  background-in-active="red" 
  *  width="100px"
  *  height="50px"
- *  checked="true" 
+ *  value="true" 
  *  is-rounded="true">
  * </fireeye-toggle-button>
  * 
@@ -23,39 +24,39 @@ import { Component, h, Prop, Event, EventEmitter } from '@stencil/core';
 export class ToggleButton {
 
     /**
-        * The checked status
+        * The value of toggle  button
     */
-    @Prop({ mutable: true, reflect: true }) checked: boolean = false;
+    @Prop({ mutable: true, reflect: true }) value: boolean = false;
 
     /**
-        * Background active
+        * Background of toggle when in active state
     */
     @Prop() backgroundActive: string = "#918e8e";
 
     /**
-        * Background Inactive
+        * Background of toggle when in in-active state
     */
     @Prop() backgroundInActive: string = "#d6d4d4";
 
     /**
-        * Set width
+        * width of toggle button
     */
     @Prop() width: string = "40px";
 
     /**
-        * Set height
+        * height of toggle button
     */
     @Prop() height: string = "20px";
 
     /**
-        * Is rounded
+        * if yes toggle is rounded else square
     */
     @Prop() isRounded: boolean = true;
 
     /**
         * Click event
     */
-    @Event({ bubbles: true, composed: true }) toggleClick: EventEmitter<boolean>;
+    @Event({ bubbles: true, composed: true }) toggleClick: EventEmitter<any>;
 
     checkBox: HTMLInputElement;
     switchSpan: HTMLSpanElement;
@@ -76,7 +77,7 @@ export class ToggleButton {
                     class="checkbox"
                     ref={el => this.checkBox = el}
                     onClick={this.toggleSwitchHandler.bind(this)}
-                    checked={this.checked} />
+                    checked={this.value} />
                 <span
                     ref={el => this.switchSpan = el}
                     class={this.isRounded ? "switch round" : "switch"} />
@@ -85,13 +86,13 @@ export class ToggleButton {
     }
 
     toggleSwitchHandler() {
-        this.checked = this.checkBox.checked;
+        this.value = this.checkBox.checked;
         this.setBackground();
-        this.toggleClick.emit(this.checked);
+        this.toggleClick.emit({value: this.value});
     }
 
     setBackground() {
-        this.switchSpan.style.setProperty('background', this.checked ? this.backgroundActive : this.backgroundInActive);
+        this.switchSpan.style.setProperty('background', this.value ? this.backgroundActive : this.backgroundInActive);
     }
 
     setContainerSize() {

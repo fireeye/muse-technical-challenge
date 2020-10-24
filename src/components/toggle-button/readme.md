@@ -7,21 +7,21 @@
 
 ## Properties
 
-| Property             | Attribute              | Description         | Type      | Default     |
-| -------------------- | ---------------------- | ------------------- | --------- | ----------- |
-| `backgroundActive`   | `background-active`    | Background active   | `string`  | `"#918e8e"` |
-| `backgroundInActive` | `background-in-active` | Background Inactive | `string`  | `"#d6d4d4"` |
-| `checked`            | `checked`              | The checked status  | `boolean` | `false`     |
-| `height`             | `height`               | Set height          | `string`  | `"20px"`    |
-| `isRounded`          | `is-rounded`           | Is rounded          | `boolean` | `true`      |
-| `width`              | `width`                | Set width           | `string`  | `"40px"`    |
+| Property             | Attribute              | Description                                  | Type      | Default     |
+| -------------------- | ---------------------- | -------------------------------------------- | --------- | ----------- |
+| `backgroundActive`   | `background-active`    | Background of toggle when in active state    | `string`  | `"#918e8e"` |
+| `backgroundInActive` | `background-in-active` | Background of toggle when in in-active state | `string`  | `"#d6d4d4"` |
+| `height`             | `height`               | height of toggle button                      | `string`  | `"20px"`    |
+| `isRounded`          | `is-rounded`           | if yes toggle is rounded else square         | `boolean` | `true`      |
+| `value`              | `value`                | The value of toggle  button                  | `boolean` | `false`     |
+| `width`              | `width`                | width of toggle button                       | `string`  | `"40px"`    |
 
 
 ## Events
 
-| Event         | Description | Type                   |
-| ------------- | ----------- | ---------------------- |
-| `toggleClick` | Click event | `CustomEvent<boolean>` |
+| Event         | Description | Type               |
+| ------------- | ----------- | ------------------ |
+| `toggleClick` | Click event | `CustomEvent<any>` |
 
 
 ----------------------------------------------

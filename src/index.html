@@ -28,6 +28,7 @@
         <td>
           <fireeye-toggle-button 
             id="toggle2"
+            value="false"
             background-active="green" 
             background-in-active="red">
           </fireeye-toggle-button>
@@ -38,7 +39,7 @@
             background-active="green" 
             background-in-active="red"
             width="100px"
-            checked="true"
+            value="true"
             height="50px">
             </fireeye-toggle-button>
         </td>
@@ -60,16 +61,16 @@
     </table>
     <script>
       document.querySelector("#toggle1").addEventListener("toggleClick", (event) => {
-        document.getElementById("status1").innerHTML = event.detail || false;
+        document.getElementById("status1").innerHTML = event.detail.value || false;
       });
       document.querySelector("#toggle2").addEventListener("toggleClick", (event) => {
-        document.getElementById("status2").innerHTML = event.detail || false;
+        document.getElementById("status2").innerHTML = event.detail.value || false;
       });
       document.querySelector("#toggle3").addEventListener("toggleClick", (event) => {
-        document.getElementById("status3").innerHTML = event.detail || false;
+        document.getElementById("status3").innerHTML = event.detail.value || false;
       });
       document.querySelector("#toggle4").addEventListener("toggleClick", (event) => {
-        document.getElementById("status4").innerHTML = event.detail || false;
+        document.getElementById("status4").innerHTML = event.detail.value || false;
       });
     </script>
     <style>

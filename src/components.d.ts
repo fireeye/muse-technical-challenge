@@ -8,27 +8,27 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface FireeyeToggleButton {
         /**
-          * Background active
+          * Background of toggle when in active state
          */
         "backgroundActive": string;
         /**
-          * Background Inactive
+          * Background of toggle when in in-active state
          */
         "backgroundInActive": string;
         /**
-          * The checked status
-         */
-        "checked": boolean;
-        /**
-          * Set height
+          * height of toggle button
          */
         "height": string;
         /**
-          * Is rounded
+          * if yes toggle is rounded else square
          */
         "isRounded": boolean;
         /**
-          * Set width
+          * The value of toggle  button
+         */
+        "value": boolean;
+        /**
+          * width of toggle button
          */
         "width": string;
     }
@@ -68,31 +68,31 @@ declare global {
 declare namespace LocalJSX {
     interface FireeyeToggleButton {
         /**
-          * Background active
+          * Background of toggle when in active state
          */
         "backgroundActive"?: string;
         /**
-          * Background Inactive
+          * Background of toggle when in in-active state
          */
         "backgroundInActive"?: string;
         /**
-          * The checked status
-         */
-        "checked"?: boolean;
-        /**
-          * Set height
+          * height of toggle button
          */
         "height"?: string;
         /**
-          * Is rounded
+          * if yes toggle is rounded else square
          */
         "isRounded"?: boolean;
         /**
           * Click event
          */
-        "onToggleClick"?: (event: CustomEvent<boolean>) => void;
+        "onToggleClick"?: (event: CustomEvent<any>) => void;
         /**
-          * Set width
+          * The value of toggle  button
+         */
+        "value"?: boolean;
+        /**
+          * width of toggle button
          */
         "width"?: string;
     }
