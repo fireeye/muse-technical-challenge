@@ -6,6 +6,32 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface FireeyeToggleSwitch {
+        /**
+          * Background of toggle when in active state
+         */
+        "backgroundActive": string;
+        /**
+          * Background of toggle when in in-active state
+         */
+        "backgroundInActive": string;
+        /**
+          * The value of toggle  switch
+         */
+        "checked": boolean;
+        /**
+          * height of toggle switch
+         */
+        "height": string;
+        /**
+          * if yes toggle is rounded else square
+         */
+        "isRounded": boolean;
+        /**
+          * width of toggle switch
+         */
+        "width": string;
+    }
     interface MyComponent {
         /**
           * The first name
@@ -22,6 +48,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLFireeyeToggleSwitchElement extends Components.FireeyeToggleSwitch, HTMLStencilElement {
+    }
+    var HTMLFireeyeToggleSwitchElement: {
+        prototype: HTMLFireeyeToggleSwitchElement;
+        new (): HTMLFireeyeToggleSwitchElement;
+    };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
     var HTMLMyComponentElement: {
@@ -29,10 +61,41 @@ declare global {
         new (): HTMLMyComponentElement;
     };
     interface HTMLElementTagNameMap {
+        "fireeye-toggle-switch": HTMLFireeyeToggleSwitchElement;
         "my-component": HTMLMyComponentElement;
     }
 }
 declare namespace LocalJSX {
+    interface FireeyeToggleSwitch {
+        /**
+          * Background of toggle when in active state
+         */
+        "backgroundActive"?: string;
+        /**
+          * Background of toggle when in in-active state
+         */
+        "backgroundInActive"?: string;
+        /**
+          * The value of toggle  switch
+         */
+        "checked"?: boolean;
+        /**
+          * height of toggle switch
+         */
+        "height"?: string;
+        /**
+          * if yes toggle is rounded else square
+         */
+        "isRounded"?: boolean;
+        /**
+          * Click event
+         */
+        "onToggleClick"?: (event: CustomEvent<any>) => void;
+        /**
+          * width of toggle switch
+         */
+        "width"?: string;
+    }
     interface MyComponent {
         /**
           * The first name
@@ -48,6 +111,7 @@ declare namespace LocalJSX {
         "middle"?: string;
     }
     interface IntrinsicElements {
+        "fireeye-toggle-switch": FireeyeToggleSwitch;
         "my-component": MyComponent;
     }
 }
@@ -55,6 +119,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "fireeye-toggle-switch": LocalJSX.FireeyeToggleSwitch & JSXBase.HTMLAttributes<HTMLFireeyeToggleSwitchElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }
     }

@@ -7,14 +7,85 @@
       content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
     />
     <title>Stencil Component Starter</title>
-
+    
     <script type="module" src="/build/muse-technical-challenge.esm.js"></script>
     <script nomodule src="/build/muse-technical-challenge.js"></script>
   </head>
   <body>
-    <my-component
-      first="Stencil"
-      last="'Don't call me a framework' JS"
-    ></my-component>
+    <table>
+      <tr>
+        <td>Default</td>
+        <td>Set Active/InActive color</td>
+        <td>Set Hieght/Width and default checked</td>
+        <td>Isn't Rounded</td>
+      </tr>
+      <tr>
+        <td>
+          <fireeye-toggle-switch 
+            id="toggle1">
+          </fireeye-toggle-switch>
+        </td>
+        <td>
+          <fireeye-toggle-switch 
+            id="toggle2"
+            checked="false"
+            background-active="green" 
+            background-in-active="red">
+          </fireeye-toggle-switch>
+        </td>
+        <td>
+          <fireeye-toggle-switch 
+            id="toggle3"
+            background-active="green" 
+            background-in-active="red"
+            width="100px"
+            checked="true"
+            height="50px">
+            </fireeye-toggle-switch>
+        </td>
+        <td>
+          <fireeye-toggle-switch
+            id="toggle4"
+            background-active="green" 
+            background-in-active="red"
+            is-rounded="false">
+          </fireeye-toggle-switch>
+        </td>
+      </tr>
+      <tr>
+        <td>Is Active = <span id="status1" class="status">false</span></td>
+        <td>Is Active = <span id="status2" class="status">false</span></td>
+        <td>Is Active = <span id="status3" class="status">true</span></td>
+        <td>Is Active = <span id="status4" class="status">false</span></td>
+      <tr>
+    </table>
+    <script>
+      document.querySelector("#toggle1").addEventListener("toggleClick", (event) => {
+        document.getElementById("status1").innerHTML = event.detail.value || false;
+      });
+      document.querySelector("#toggle2").addEventListener("toggleClick", (event) => {
+        document.getElementById("status2").innerHTML = event.detail.value || false;
+      });
+      document.querySelector("#toggle3").addEventListener("toggleClick", (event) => {
+        document.getElementById("status3").innerHTML = event.detail.value || false;
+      });
+      document.querySelector("#toggle4").addEventListener("toggleClick", (event) => {
+        document.getElementById("status4").innerHTML = event.detail.value || false;
+      });
+    </script>
+    <style>
+      table {
+        border-collapse: collapse;
+      }
+      table, td, th {
+        border: 1px solid black;
+      }
+      td {
+        padding: 5px;
+      }
+      .status {
+        color: blue;
+      }
+    </style>
   </body>
 </html>
