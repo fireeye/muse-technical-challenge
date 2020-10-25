@@ -8,7 +8,7 @@ describe("ToggleSwitch", () => {
       html: "<fireeye-toggle-switch></fireeye-toggle-switch>",
     });
     expect(root).toEqualHtml(`
-          <fireeye-toggle-switch>
+          <fireeye-toggle-switch height="20px" width="40px">
             <mock:shadow-root>
              <label class="container" style="width:40px; height: 20px;">
               <input class="checkbox" type="checkbox">

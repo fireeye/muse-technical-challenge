@@ -16,6 +16,10 @@ export namespace Components {
          */
         "backgroundInActive": string;
         /**
+          * The value of toggle  switch
+         */
+        "checked": boolean;
+        /**
           * height of toggle switch
          */
         "height": string;
@@ -23,10 +27,6 @@ export namespace Components {
           * if yes toggle is rounded else square
          */
         "isRounded": boolean;
-        /**
-          * The value of toggle  switch
-         */
-        "value": boolean;
         /**
           * width of toggle switch
          */
@@ -76,6 +76,10 @@ declare namespace LocalJSX {
          */
         "backgroundInActive"?: string;
         /**
+          * The value of toggle  switch
+         */
+        "checked"?: boolean;
+        /**
           * height of toggle switch
          */
         "height"?: string;
@@ -87,10 +91,6 @@ declare namespace LocalJSX {
           * Click event
          */
         "onToggleClick"?: (event: CustomEvent<any>) => void;
-        /**
-          * The value of toggle  switch
-         */
-        "value"?: boolean;
         /**
           * width of toggle switch
          */
